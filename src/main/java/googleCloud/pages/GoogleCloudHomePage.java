@@ -1,6 +1,7 @@
 package googleCloud.pages;
 
 import defaultPage.DefaultPage;
+import model.Search;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,9 +26,9 @@ public class GoogleCloudHomePage extends DefaultPage {
         logger.info("Page opened");
     }
 
-    public void enterSearchTerm(String term) {
+    public void enterSearchTerm(Search search) {
         waitForElementToBeClickable(searchInput.get(0)).click();
-        waitForElementToBeClickable(searchInput.get(0)).sendKeys(term);
+        waitForElementToBeClickable(searchInput.get(0)).sendKeys(search.getSearch());
         logger.info("Search term entered");
     }
 

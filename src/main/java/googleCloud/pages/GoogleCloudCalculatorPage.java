@@ -1,8 +1,8 @@
 package googleCloud.pages;
 
 import defaultPage.DefaultPage;
+import model.*;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,27 +34,26 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
     @FindBy(xpath = "//label[text()='Operating System / Software']/../md-select")
     private WebElement operatingSystemLocator;
 
-    @FindBy(xpath = "//md-option[@value='free']/div[@class='md-text']")
-    private WebElement requiredOSValueLocator;
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text']")
+    private List<WebElement> requiredOSValueLocator;
 
     @FindBy(xpath = "//label[text()='Machine Class']/../md-select")
     private WebElement machineClassLocator;
 
-    @FindBy(xpath = "//md-content/md-option[@value='regular']/div[contains(text(), 'Regular')]")
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text']")
     private List<WebElement> requiredMachineClassLocator;
 
     @FindBy(xpath = "//label[text()='Series']/following-sibling::md-select")
     private WebElement seriesLocator;
 
-    @FindBy(xpath = "//md-option[@value='n1']/child::div[@class='md-text ng-binding']")
-    private WebElement requiredSeriesLocator;
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text ng-binding']")
+    private List<WebElement> requiredSeriesLocator;
 
     @FindBy(xpath = "//label[text()='Machine type']/following-sibling::md-select")
     private WebElement machineTypeLocator;
 
-    @FindBy(xpath = "//md-option[@value='CP-COMPUTEENGINE-VMIMAGE-N1-STANDARD-8']/" +
-            "child::div[@class='md-text ng-binding']")
-    private WebElement requiredMachineTypeLocator;
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text ng-binding']")
+    private List<WebElement> requiredMachineTypeLocator;
 
     @FindBy(xpath = "//md-checkbox[@ng-model='listingCtrl.computeServer.addGPUs']/" +
             "child::div[starts-with(@class, 'md-container')]")
@@ -63,7 +62,7 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
     @FindBy(xpath = "//label[text()='Number of GPUs']/../md-select")
     private WebElement gpuCountLocator;
 
-    @FindBy(xpath = "//md-content/md-option[@value='1']/div[contains(text(), '1')]")
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text ng-binding']")
     private List<WebElement> requiredGPUCountLocator;
 
     @FindBy(xpath = "//label[text()='GPU type']/../md-select")
@@ -118,20 +117,46 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
         logger.info("Compute Engine activated");
     }
 
-    public void fillForms() {
+    public void enterInstancesNumber(InstancesNumber instancesNumber) {
         waitForElementToBeClickable(numberOfInstancesLocator);
-        numberOfInstancesLocator.sendKeys(Keys.NUMPAD4);
+        numberOfInstancesLocator.sendKeys(instancesNumber.getKeys());
+    }
+
+    public void enterOSType(OperatingSystem operatingSystem) {
         waitForElementToBeClickable(operatingSystemLocator).click();
-        waitForElementToBeClickable(requiredOSValueLocator).click();
+        waitForVisibilityOfAllElements(requiredOSValueLocator);
+        requiredOSValueLocator.get(Integer.parseInt(operatingSystem.getOperatingSystem())).click();
+    }
+
+    public void enterMachineClass(MachineClass machineClass) {
         waitForElementToBeClickable(machineClassLocator).click();
-        waitForElementToBeClickable(requiredMachineClassLocator.get(1)).click();
+        waitForVisibilityOfAllElements(requiredMachineClassLocator);
+        requiredMachineClassLocator.get(Integer.parseInt(machineClass.getMachineClass())).click();
+    }
+
+    public void enterSeries(Series series) {
         waitForElementToBeClickable(seriesLocator).click();
-        waitForElementToBeClickable(requiredSeriesLocator).click();
+        waitForVisibilityOfAllElements(requiredSeriesLocator);
+        requiredSeriesLocator.get(Integer.parseInt(series.getSeries())).click();
+    }
+
+    public void enterMachineType(MachineType machineType) {
         waitForElementToBeClickable(machineTypeLocator).click();
-        waitForElementToBeClickable(requiredMachineTypeLocator).click();
+        waitForVisibilityOfAllElements(requiredMachineTypeLocator);
+        requiredMachineTypeLocator.get(Integer.parseInt(machineType.getMachineType())).click();
+    }
+
+    public void markAddGPUCheckbox() {
         waitForElementToBeClickable(addGPUCheckboxLocator).click();
+    }
+
+    public void enterNumberOfGPUs(NumberOfGPUs numberOfGPUs) {
         waitForElementToBeClickable(gpuCountLocator).click();
-        waitForElementToBeClickable(requiredGPUCountLocator.get(3)).click();
+        waitForVisibilityOfAllElements(requiredGPUCountLocator);
+        requiredGPUCountLocator.get(Integer.parseInt(numberOfGPUs.getNumberOfGPUs())).click();
+    }
+
+    public void fillForms() {
         waitForElementToBeClickable(gpuTypeLocator).click();
         waitForElementToBeClickable(requiredGPUTypeLocator).click();
         waitForElementToBeClickable(localSSDLocator.get(0)).click();
