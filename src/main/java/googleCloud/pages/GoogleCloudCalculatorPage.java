@@ -161,6 +161,7 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
         waitForFrameToBeAvailableAndSwitchToIt(parentFrameLocator);
         waitForFrameToBeAvailableAndSwitchToIt(childFrameLocator);
         waitForElementToBeClickable(emailEstimateButtonLocator).click();
+        logger.info("Email form opened");
     }
 
     public void enterEmail() {
@@ -177,6 +178,7 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
 
     public void sendEmail() {
         waitForElementToBeClickable(sendEmailButtonLocator.get(1)).click();
+        logger.info("Send email button clicked");
     }
 
     public void switchToTenMinuteMail() {

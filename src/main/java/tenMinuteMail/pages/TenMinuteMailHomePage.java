@@ -38,6 +38,7 @@ public class TenMinuteMailHomePage extends DefaultPage {
     public void switchToCalculator() {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(0));
+        logger.info("Switched to calculator");
     }
 
     public void openMailMessage() {
@@ -47,6 +48,7 @@ public class TenMinuteMailHomePage extends DefaultPage {
     }
 
     public boolean isTotalCostInEmailEqualsToRequired(String term) {
+        logger.info("Checking result");
         return totalCostInEmailLocator.getText().contains(term);
     }
 }

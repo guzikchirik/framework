@@ -33,5 +33,6 @@ public class GoogleCloudHomePage extends DefaultPage {
 
     public void runSearch() {
         waitForElementToBeClickable(searchInput.get(0)).sendKeys(Keys.ENTER);
+        logger.info("Search button clicked");
     }
 }
