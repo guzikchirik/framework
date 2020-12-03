@@ -19,6 +19,10 @@ public class GoogleCloudTest extends BaseTest {
     Series series = SeriesCreator.withCredentialsFromProperty();
     MachineType machineType = MachineTypeCreator.withCredentialsFromProperty();
     NumberOfGPUs numberOfGPUs = NumberOfGPUsCreator.withCredentialsFromProperty();
+    GPUType gpuType = GPUTypeCreator.withCredentialsFromProperty();
+    LocalSSD localSSD = LocalSSDCreator.withCredentialsFromProperty();
+    Location location = LocationCreator.withCredentialsFromProperty();
+    CommittedUsage committedUsage = CommittedUsageCreator.withCredentialsFromProperty();
 
     @Test
     public void isTotalEstimatedMonthlyCostInEmailEqualsToRequiredTest() {
@@ -39,9 +43,12 @@ public class GoogleCloudTest extends BaseTest {
         cloudCalculatorPage.enterMachineType(machineType); //model
         cloudCalculatorPage.markAddGPUCheckbox();
         cloudCalculatorPage.enterNumberOfGPUs(numberOfGPUs); //model
-
-        cloudCalculatorPage.fillForms();
+        cloudCalculatorPage.enterGPUType(gpuType); //model
+        cloudCalculatorPage.enterLocalSSD(localSSD); //model
+        cloudCalculatorPage.enterDatacenterLocation(location); //model
+        cloudCalculatorPage.enterCommittedUsage(committedUsage); //model
         cloudCalculatorPage.addToEstimate();
+        String resultFromCalculator = cloudCalculatorPage.getTotalEstimateCostAsString();
         cloudCalculatorPage.openLinkInNewTab();
         tenMinuteMailHomePage.copyEmail();
         tenMinuteMailHomePage.switchToCalculator();
@@ -50,8 +57,8 @@ public class GoogleCloudTest extends BaseTest {
         cloudCalculatorPage.sendEmail();
         cloudCalculatorPage.switchToTenMinuteMail();
         tenMinuteMailHomePage.openMailMessage();
+        Assert.assertTrue(resultFromCalculator
+                .contains(tenMinuteMailHomePage.getTotalEstimatedCostFromEmailAsString()));
         logger.info("isTotalEstimatedMonthlyCostInEmailEqualsToRequiredTest finished");
-        String REQUIRED_TOTAL_COST = "1,082.77";
-        Assert.assertTrue(tenMinuteMailHomePage.isTotalCostInEmailEqualsToRequired(REQUIRED_TOTAL_COST));
     }
 }

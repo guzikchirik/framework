@@ -31,4 +31,9 @@ public class DefaultPage {
         return new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.visibilityOfAllElements(webElementList));
     }
+
+    public boolean waitForElementSelectionStateToBe(WebElement webElement, Boolean flag) {
+        return new WebDriverWait(driver,10)
+                .until(ExpectedConditions.elementSelectionStateToBe(webElement, flag));
+    }
 }

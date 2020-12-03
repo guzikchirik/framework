@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TenMinuteMailHomePage extends DefaultPage {
 
@@ -18,8 +19,8 @@ public class TenMinuteMailHomePage extends DefaultPage {
     @FindBy(className = "message_top")
     private WebElement messageLocator;
 
-    @FindBy(xpath = "//h2[contains(text(), '1,082.77')]")
-    private WebElement totalCostInEmailLocator;
+    @FindBy(tagName = "h3")
+    private List<WebElement> totalCostInEmailLocator;
 
     public TenMinuteMailHomePage(WebDriver driver) {
         super(driver);
@@ -47,8 +48,8 @@ public class TenMinuteMailHomePage extends DefaultPage {
         logger.info("Email message opened");
     }
 
-    public boolean isTotalCostInEmailEqualsToRequired(String term) {
-        logger.info("Checking result");
-        return totalCostInEmailLocator.getText().contains(term);
+    public String getTotalEstimatedCostFromEmailAsString() {
+        logger.info("Total estimated cost in email: " + totalCostInEmailLocator.get(2).getText());
+        return totalCostInEmailLocator.get(2).getText();
     }
 }

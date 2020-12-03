@@ -19,6 +19,6 @@ public class GoogleCloudSearchResultsPage extends DefaultPage {
 
     public void goToCalculatorPage() {
         waitForElementToBeClickable(calculatorPageLocator).click();
-        logger.info("Switched to google cloud calculator page");
+        logger.info("Switching to google cloud calculator page");
     }
 }

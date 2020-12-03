@@ -68,29 +68,32 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
     @FindBy(xpath = "//label[text()='GPU type']/../md-select")
     private WebElement gpuTypeLocator;
 
-    @FindBy(xpath = "//md-content/md-option[@value='NVIDIA_TESLA_V100']/div[contains(text(), 'NVIDIA Tesla V100')]")
-    private WebElement requiredGPUTypeLocator;
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text ng-binding']")
+    private List<WebElement> requiredGPUTypeLocator;
 
     @FindBy(xpath = "//label[text()='Local SSD']/../md-select")
     private List<WebElement> localSSDLocator;
 
-    @FindBy(xpath = "//md-content/md-option[@value='2']/div[contains(text(), '2x375 GB')]")
-    private WebElement requiredLocalSSDLocator;
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text ng-binding']")
+    private List<WebElement> requiredLocalSSDLocator;
 
     @FindBy(xpath = "//label[text()='Datacenter location']/../md-select")
     private List<WebElement> locationLocator;
 
-    @FindBy(xpath = "//md-content/md-option[@value='europe-west3']/div[contains(text(), 'Frankfurt (europe-west3)')]")
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text ng-binding']")
     private List<WebElement> requiredLocationLocator;
 
     @FindBy(xpath = "//label[text()='Committed usage']/../md-select")
     private List<WebElement> committedUsageLocator;
 
-    @FindBy(xpath = "//md-content/md-option[@value='1']/div[contains(text(), '1 Year')]")
+    @FindBy(xpath = "//div[@aria-hidden='false']//div[@class='md-text']")
     private List<WebElement> requiredCommittedUsageLocator;
 
     @FindBy(xpath = "//button[@aria-label='Add to Estimate']")
     private List<WebElement> addToEstimateButtonLocator;
+
+    @FindBy(xpath = "//h2/b[@class='ng-binding']")
+    private WebElement totalEstimateCostLocator;
 
     @FindBy(xpath = "//body[@type='marketing']")
     private WebElement bodyLocator;
@@ -120,57 +123,105 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
     public void enterInstancesNumber(InstancesNumber instancesNumber) {
         waitForElementToBeClickable(numberOfInstancesLocator);
         numberOfInstancesLocator.sendKeys(instancesNumber.getKeys());
+        logger.info("Instances number entered: " + instancesNumber.getKeys().name());
     }
 
     public void enterOSType(OperatingSystem operatingSystem) {
         waitForElementToBeClickable(operatingSystemLocator).click();
         waitForVisibilityOfAllElements(requiredOSValueLocator);
+        waitForElementSelectionStateToBe(requiredOSValueLocator
+                .get(Integer.parseInt(operatingSystem.getOperatingSystem())), false);
         requiredOSValueLocator.get(Integer.parseInt(operatingSystem.getOperatingSystem())).click();
+        logger.info("OS type entered: " + requiredOSValueLocator
+                .get(Integer.parseInt(operatingSystem.getOperatingSystem())).getText());
     }
 
     public void enterMachineClass(MachineClass machineClass) {
         waitForElementToBeClickable(machineClassLocator).click();
         waitForVisibilityOfAllElements(requiredMachineClassLocator);
+        waitForElementSelectionStateToBe(requiredMachineClassLocator
+                .get(Integer.parseInt(machineClass.getMachineClass())), false);
         requiredMachineClassLocator.get(Integer.parseInt(machineClass.getMachineClass())).click();
+        logger.info("Machine class entered: " + requiredMachineClassLocator
+                .get(Integer.parseInt(machineClass.getMachineClass())).getText());
     }
 
     public void enterSeries(Series series) {
         waitForElementToBeClickable(seriesLocator).click();
         waitForVisibilityOfAllElements(requiredSeriesLocator);
+        waitForElementSelectionStateToBe(requiredSeriesLocator
+                .get(Integer.parseInt(series.getSeries())), false);
         requiredSeriesLocator.get(Integer.parseInt(series.getSeries())).click();
+        logger.info("Series entered: " + requiredSeriesLocator.get(Integer.parseInt(series.getSeries())).getText());
     }
 
     public void enterMachineType(MachineType machineType) {
         waitForElementToBeClickable(machineTypeLocator).click();
         waitForVisibilityOfAllElements(requiredMachineTypeLocator);
+        waitForElementSelectionStateToBe(requiredMachineTypeLocator
+                .get(Integer.parseInt(machineType.getMachineType())), false);
         requiredMachineTypeLocator.get(Integer.parseInt(machineType.getMachineType())).click();
+        logger.info("Machine type entered: " + requiredMachineTypeLocator
+                .get(Integer.parseInt(machineType.getMachineType())).getText());
     }
 
     public void markAddGPUCheckbox() {
         waitForElementToBeClickable(addGPUCheckboxLocator).click();
+        logger.info("GPU checkbox marked");
     }
 
     public void enterNumberOfGPUs(NumberOfGPUs numberOfGPUs) {
         waitForElementToBeClickable(gpuCountLocator).click();
         waitForVisibilityOfAllElements(requiredGPUCountLocator);
+        waitForElementSelectionStateToBe(requiredGPUCountLocator
+                .get(Integer.parseInt(numberOfGPUs.getNumberOfGPUs())), false);
         requiredGPUCountLocator.get(Integer.parseInt(numberOfGPUs.getNumberOfGPUs())).click();
+        logger.info("GPUs number entered: " + requiredGPUCountLocator
+                .get(Integer.parseInt(numberOfGPUs.getNumberOfGPUs())).getText());
     }
 
-    public void fillForms() {
+    public void enterGPUType(GPUType gpuType) {
         waitForElementToBeClickable(gpuTypeLocator).click();
-        waitForElementToBeClickable(requiredGPUTypeLocator).click();
+        waitForVisibilityOfAllElements(requiredGPUTypeLocator);
+        waitForElementSelectionStateToBe(requiredGPUTypeLocator
+                .get(Integer.parseInt(gpuType.getGpuType())), false);
+        requiredGPUTypeLocator.get(Integer.parseInt(gpuType.getGpuType())).click();
+        logger.info("GPU type entered: " + requiredGPUTypeLocator
+                .get(Integer.parseInt(gpuType.getGpuType())).getText());
+    }
+
+    public void enterLocalSSD(LocalSSD localSSD) {
         waitForElementToBeClickable(localSSDLocator.get(0)).click();
-        waitForElementToBeClickable(requiredLocalSSDLocator).click();
+        waitForVisibilityOfAllElements(requiredLocalSSDLocator);
+        waitForElementSelectionStateToBe(requiredLocalSSDLocator
+                .get(Integer.parseInt(localSSD.getLocalSSD())), false);
+        requiredLocalSSDLocator.get(Integer.parseInt(localSSD.getLocalSSD())).click();
+        logger.info("Local SSD entered: " + requiredLocalSSDLocator
+                .get(Integer.parseInt(localSSD.getLocalSSD())).getText());
+    }
+
+    public void enterDatacenterLocation(Location location) {
         waitForElementToBeClickable(locationLocator.get(0)).click();
-        waitForElementToBeClickable(requiredLocationLocator.get(2)).click();
+        waitForVisibilityOfAllElements(requiredLocationLocator);
+        waitForElementSelectionStateToBe(requiredLocationLocator
+                .get(Integer.parseInt(location.getLocation())), false);
+        requiredLocationLocator.get(Integer.parseInt(location.getLocation())).click();
+        logger.info("Datacenter location entered: " + requiredLocationLocator
+                .get(Integer.parseInt(location.getLocation())).getText());
+    }
+
+    public void enterCommittedUsage(CommittedUsage committedUsage) {
         waitForElementToBeClickable(committedUsageLocator.get(0)).click();
-        waitForElementToBeClickable(requiredCommittedUsageLocator.get(1)).click();
-        logger.info("Forms filled");
+        waitForVisibilityOfAllElements(requiredCommittedUsageLocator);
+        waitForElementSelectionStateToBe(requiredCommittedUsageLocator
+                .get(Integer.parseInt(committedUsage.getCommittedUsage())), false);
+        requiredCommittedUsageLocator.get(Integer.parseInt(committedUsage.getCommittedUsage())).click();
+        logger.info("Committed usage entered");
     }
 
     public void addToEstimate() {
         waitForElementToBeClickable(addToEstimateButtonLocator.get(0)).click();
-        logger.info("Added to estimate");
+        logger.info("All forms filled & added to estimate");
     }
 
     public void openLinkInNewTab() {
@@ -178,7 +229,7 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         driver.get("https://10minutemail.com");
-        logger.info("New tab opened");
+        logger.info("Switched to mail service in new tab");
     }
 
     public void emailEstimate() {
@@ -193,22 +244,26 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
         try {
             waitForElementToBeClickable(inputEmailLocator).sendKeys((String) Toolkit.getDefaultToolkit()
                     .getSystemClipboard().getData(DataFlavor.stringFlavor));
-            logger.info((String) Toolkit.getDefaultToolkit()
+            logger.info("Email entered: " + Toolkit.getDefaultToolkit()
                     .getSystemClipboard().getData(DataFlavor.stringFlavor));
         } catch (UnsupportedFlavorException | IOException e) {
             e.printStackTrace();
         }
-        logger.info("Email entered");
     }
 
     public void sendEmail() {
         waitForElementToBeClickable(sendEmailButtonLocator.get(1)).click();
-        logger.info("Send email button clicked");
+        logger.info("Email sent");
     }
 
     public void switchToTenMinuteMail() {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
-        logger.info("Switched to second tab");
+        logger.info("Switched to mail service");
+    }
+
+    public String getTotalEstimateCostAsString() {
+        logger.info("Received " + totalEstimateCostLocator.getText());
+        return totalEstimateCostLocator.getText();
     }
 }

@@ -23,7 +23,7 @@ public class GoogleCloudHomePage extends DefaultPage {
 
     public void openPage() {
         driver.get(HOMEPAGE_URL);
-        logger.info("Page opened");
+        logger.info("Homepage opened");
     }
 
     public void enterSearchTerm(Search search) {
@@ -34,6 +34,6 @@ public class GoogleCloudHomePage extends DefaultPage {
 
     public void runSearch() {
         waitForElementToBeClickable(searchInput.get(0)).sendKeys(Keys.ENTER);
-        logger.info("Search button clicked");
+        logger.info("Search ran");
     }
 }
