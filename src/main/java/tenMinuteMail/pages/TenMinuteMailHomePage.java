@@ -13,7 +13,7 @@ import java.util.List;
 
 public class TenMinuteMailHomePage extends DefaultPage {
 
-    @FindBy(id = "mail_address")
+    @FindBy(id = "copy_address")
     private WebElement copyEmailLocator;
 
     @FindBy(className = "message_top")
@@ -28,11 +28,11 @@ public class TenMinuteMailHomePage extends DefaultPage {
     }
 
     public void copyEmail() {
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        waitForElementToBeClickable(copyEmailLocator).click();
+        waitForElementToBeClickable(copyEmailLocator).click();
+        waitForElementToBeClickable(copyEmailLocator).click();
+        waitForElementToBeClickable(copyEmailLocator).click();
+        waitForElementToBeClickable(copyEmailLocator).click();
         logger.info("Email address copied");
     }
 

@@ -32,21 +32,21 @@ public class GoogleCloudTest extends BaseTest {
         GoogleCloudCalculatorPage cloudCalculatorPage = new GoogleCloudCalculatorPage(driver);
         TenMinuteMailHomePage tenMinuteMailHomePage = new TenMinuteMailHomePage(driver);
         cloudHomePage.openPage();
-        cloudHomePage.enterSearchTerm(search); //model
+        cloudHomePage.enterSearchTerm(search);
         cloudHomePage.runSearch();
         cloudSearchResultsPage.goToCalculatorPage();
         cloudCalculatorPage.activateComputeEngine();
-        cloudCalculatorPage.enterInstancesNumber(instancesNumber); //model
-        cloudCalculatorPage.enterOSType(operatingSystem); //model
-        cloudCalculatorPage.enterMachineClass(machineClass); //model
-        cloudCalculatorPage.enterSeries(series); //model
-        cloudCalculatorPage.enterMachineType(machineType); //model
+        cloudCalculatorPage.enterInstancesNumber(instancesNumber);
+        cloudCalculatorPage.enterOSType(operatingSystem);
+        cloudCalculatorPage.enterMachineClass(machineClass);
+        cloudCalculatorPage.enterSeries(series);
+        cloudCalculatorPage.enterMachineType(machineType);
         cloudCalculatorPage.markAddGPUCheckbox();
-        cloudCalculatorPage.enterNumberOfGPUs(numberOfGPUs); //model
-        cloudCalculatorPage.enterGPUType(gpuType); //model
-        cloudCalculatorPage.enterLocalSSD(localSSD); //model
-        cloudCalculatorPage.enterDatacenterLocation(location); //model
-        cloudCalculatorPage.enterCommittedUsage(committedUsage); //model
+        cloudCalculatorPage.enterNumberOfGPUs(numberOfGPUs);
+        cloudCalculatorPage.enterGPUType(gpuType);
+        cloudCalculatorPage.enterLocalSSD(localSSD);
+        cloudCalculatorPage.enterDatacenterLocation(location);
+        cloudCalculatorPage.enterCommittedUsage(committedUsage);
         cloudCalculatorPage.addToEstimate();
         String resultFromCalculator = cloudCalculatorPage.getTotalEstimateCostAsString();
         cloudCalculatorPage.openLinkInNewTab();
