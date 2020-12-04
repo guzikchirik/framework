@@ -4,7 +4,7 @@ import model.OperatingSystem;
 
 public class OperatingSystemCreator {
 
-    public static final String OPERATING_SYSTEM = "0";
+    public static final String OPERATING_SYSTEM = "operating.system";
 
     /**
      * Operating System / Software
@@ -22,6 +22,6 @@ public class OperatingSystemCreator {
      */
 
     public static OperatingSystem withCredentialsFromProperty() {
-        return new OperatingSystem(OPERATING_SYSTEM);
+        return new OperatingSystem(TestDataReader.getTestData(OPERATING_SYSTEM));
     }
 }

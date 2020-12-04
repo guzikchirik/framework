@@ -4,7 +4,7 @@ import model.MachineClass;
 
 public class MachineClassCreator {
 
-    public static final String MACHINE_CLASS = "0";
+    public static final String MACHINE_CLASS = "machine.class";
 
     /**
      * Machine Class
@@ -13,6 +13,6 @@ public class MachineClassCreator {
      */
 
     public static MachineClass withCredentialsFromProperty() {
-        return new MachineClass(MACHINE_CLASS);
+        return new MachineClass(TestDataReader.getTestData(MACHINE_CLASS));
     }
 }

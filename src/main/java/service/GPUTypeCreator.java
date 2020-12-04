@@ -4,7 +4,7 @@ import model.GPUType;
 
 public class GPUTypeCreator {
 
-    public static final String GPU_TYPE = "3";
+    public static final String GPU_TYPE = "gpu.type";
 
     /**
      *          GPU type
@@ -16,6 +16,6 @@ public class GPUTypeCreator {
      */
 
     public static GPUType withCredentialsFromProperty() {
-        return new GPUType(GPU_TYPE);
+        return new GPUType(TestDataReader.getTestData(GPU_TYPE));
     }
 }

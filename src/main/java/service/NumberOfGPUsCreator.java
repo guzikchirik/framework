@@ -4,7 +4,7 @@ import model.NumberOfGPUs;
 
 public class NumberOfGPUsCreator {
 
-    public static final String NUMBER_OF_GPU = "1";
+    public static final String NUMBER_OF_GPU = "gpu.number";
 
     /**
      * Number of GPUs
@@ -16,6 +16,6 @@ public class NumberOfGPUsCreator {
      */
 
     public static NumberOfGPUs withCredentialsFromProperty() {
-        return new NumberOfGPUs(NUMBER_OF_GPU);
+        return new NumberOfGPUs(TestDataReader.getTestData(NUMBER_OF_GPU));
     }
 }

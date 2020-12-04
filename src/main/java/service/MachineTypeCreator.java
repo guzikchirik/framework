@@ -4,7 +4,7 @@ import model.MachineType;
 
 public class MachineTypeCreator {
 
-    public static final String MACHINE_TYPE = "3";
+    public static final String MACHINE_TYPE = "machine.type";
 
     /**
      * Machine Family - General purpose
@@ -129,6 +129,6 @@ public class MachineTypeCreator {
      */
 
     public static MachineType withCredentialsFromProperty() {
-        return new MachineType(MACHINE_TYPE);
+        return new MachineType(TestDataReader.getTestData(MACHINE_TYPE));
     }
 }

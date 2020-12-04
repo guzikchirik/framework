@@ -4,7 +4,7 @@ import model.Series;
 
 public class SeriesCreator {
 
-    public static final String SERIES = "0";
+    public static final String SERIES = "series";
 
     /**
      *          Series
@@ -23,6 +23,6 @@ public class SeriesCreator {
      */
 
     public static Series withCredentialsFromProperty() {
-        return new Series(SERIES);
+        return new Series(TestDataReader.getTestData(SERIES));
     }
 }

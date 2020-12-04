@@ -4,7 +4,7 @@ import model.CommittedUsage;
 
 public class CommittedUsageCreator {
 
-    public static final String COMMITTED_USAGE = "1";
+    public static final String COMMITTED_USAGE = "committed.usage";
 
     /**
      * Committed usage
@@ -14,6 +14,6 @@ public class CommittedUsageCreator {
      */
 
     public static CommittedUsage withCredentialsFromProperty() {
-        return new CommittedUsage(COMMITTED_USAGE);
+        return new CommittedUsage(TestDataReader.getTestData(COMMITTED_USAGE));
     }
 }

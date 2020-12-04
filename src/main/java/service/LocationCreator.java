@@ -4,7 +4,7 @@ import model.Location;
 
 public class LocationCreator {
 
-    public static final String LOCATION = "9";
+    public static final String LOCATION = "location";
 
     /**
      *      Datacenter location
@@ -35,6 +35,6 @@ public class LocationCreator {
      */
 
     public static Location withCredentialsFromProperty() {
-        return new Location(LOCATION);
+        return new Location(TestDataReader.getTestData(LOCATION));
     }
 }

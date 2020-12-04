@@ -4,7 +4,7 @@ import model.LocalSSD;
 
 public class LocalSSDCreator {
 
-    public static final String LOCAL_SSD = "2";
+    public static final String LOCAL_SSD = "local.ssd";
 
     /**
      * Local SSD
@@ -22,6 +22,6 @@ public class LocalSSDCreator {
      */
 
     public static LocalSSD withCredentialsFromProperty() {
-        return new LocalSSD(LOCAL_SSD);
+        return new LocalSSD(TestDataReader.getTestData(LOCAL_SSD));
     }
 }
