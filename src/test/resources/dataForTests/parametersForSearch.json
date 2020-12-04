@@ -1,11 +1,32 @@
-{
-  "operatingSystem" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-  "machineClass" : [0, 1],
-  "series" : [0, 1, 2, 3],
-  "machineType" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
-  "numberOfGPUs" : [0, 1, 2, 3, 4],
-  "gpuType" : [0, 1, 2, 3, 4],
-  "localSSD" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-  "location" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
-  "committedUsage" : [0, 1, 2]
-}
+[
+  { "formModel1" : [{"operatingSystem" : "0"},
+                    {"machineClass" : "0"},
+                    {"series" : "0"},
+                    {"machineType" : "3"},
+                    {"numberOfGPUs" : "1"},
+                    {"gpuType" : "3"},
+                    {"localSSD" : "2"},
+                    {"location" : "9"},
+                    {"committedUsage" : "1"}]
+  },
+  { "formModel2" : [{"operatingSystem" : "8"},
+                    {"machineClass" : "0"},
+                    {"series" : "0"},
+                    {"machineType" : "21"},
+                    {"numberOfGPUs" : "4"},
+                    {"gpuType" : "0"},
+                    {"localSSD" : "9"},
+                    {"location" : "4"},
+                    {"committedUsage" : "2"}]
+  },
+  { "formModel3" : [{"operatingSystem" : "4"},
+                    {"machineClass" : "0"},
+                    {"series" : "0"},
+                    {"machineType" : "10"},
+                    {"numberOfGPUs" : "3"},
+                    {"gpuType" : "2"},
+                    {"localSSD" : "4"},
+                    {"location" : "7"},
+                    {"committedUsage" : "1"}]
+  }
+]
