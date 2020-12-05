@@ -1,34 +1,35 @@
-{
-  "formModel1" : {"operatingSystem" : {"operatingSystem" : "0"},
-                  "machineClass" : {"machineClass" : "0"},
-                  "series" : {"series" : "0"},
-                  "machineType" : {"machineType" : "3"},
-                  "numberOfGPUs" : {"numberOfGPUs" : "1"},
-                  "gpuType" : {"gpuType" : "3"},
-                  "localSSD" : {"localSSD" : "2"},
-                  "location" : {"location" : "9"},
-                  "committedUsage" : {"committedUsage" : "1"}
+[
+  {
+  "operatingSystem" : {"operatingSystem" : "0"},
+  "machineClass" : {"machineClass" : "0"},
+  "series" : {"series" : "0"},
+  "machineType" : {"machineType" : "3"},
+  "numberOfGPUs" : {"numberOfGPUs" : "1"},
+  "gpuType" : {"gpuType" : "3"},
+  "localSSD" : {"localSSD" : "2"},
+  "location" : {"location" : "9"},
+  "committedUsage" : {"committedUsage" : "1"}
   },
-
-  "formModel2" : {"operatingSystem" : {"operatingSystem" : "8"},
-                  "machineClass" : {"machineClass" : "0"},
-                  "series" : {"series" : "0"},
-                  "machineType" : {"machineType" : "21"},
-                  "numberOfGPUs" : {"numberOfGPUs" : "4"},
-                  "gpuType" : {"gpuType" : "0"},
-                  "localSSD" : {"localSSD" : "9"},
-                  "location" : {"location" : "4"},
-                  "committedUsage" : {"committedUsage" : "2"}
+  {
+  "operatingSystem" : {"operatingSystem" : "8"},
+  "machineClass" : {"machineClass" : "0"},
+  "series" : {"series" : "0"},
+  "machineType" : {"machineType" : "21"},
+  "numberOfGPUs" : {"numberOfGPUs" : "4"},
+  "gpuType" : {"gpuType" : "0"},
+  "localSSD" : {"localSSD" : "9"},
+  "location" : {"location" : "4"},
+  "committedUsage" : {"committedUsage" : "2"}
   },
-
-  "formModel3" : {"operatingSystem" : {"operatingSystem" : "4"},
-                  "machineClass" : {"machineClass" : "0"},
-                  "series" : {"series" : "0"},
-                  "machineType" : {"machineType" : "10"},
-                  "numberOfGPUs" : {"numberOfGPUs" : "3"},
-                  "gpuType" : {"gpuType" : "2"},
-                  "localSSD" : {"localSSD" : "4"},
-                  "location" : {"location" : "7"},
-                  "committedUsage" : {"committedUsage" : "1"}
+  {
+  "operatingSystem" : {"operatingSystem" : "4"},
+  "machineClass" : {"machineClass" : "0"},
+  "series" : {"series" : "0"},
+  "machineType" : {"machineType" : "10"},
+  "numberOfGPUs" : {"numberOfGPUs" : "3"},
+  "gpuType" : {"gpuType" : "2"},
+  "localSSD" : {"localSSD" : "4"},
+  "location" : {"location" : "7"},
+  "committedUsage" : {"committedUsage" : "1"}
   }
-}
+]
