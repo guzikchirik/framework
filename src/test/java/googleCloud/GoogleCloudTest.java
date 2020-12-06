@@ -4,16 +4,13 @@ import base.BaseTest;
 import googleCloud.pages.GoogleCloudCalculatorPage;
 import googleCloud.pages.GoogleCloudHomePage;
 import googleCloud.pages.GoogleCloudSearchResultsPage;
-import model.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import service.*;
 import service.FormModelCreator;
 import tenMinuteMail.pages.TenMinuteMailHomePage;
 
 public class GoogleCloudTest extends BaseTest {
 
-    InstancesNumber instancesNumber = InstancesNumberCreator.withCredentialsFromProperty();
     FormModelCreator formModelCreator = new FormModelCreator();
 
     @Test
@@ -28,7 +25,7 @@ public class GoogleCloudTest extends BaseTest {
         cloudHomePage.runSearch();
         cloudSearchResultsPage.goToCalculatorPage();
         cloudCalculatorPage.activateComputeEngine();
-        cloudCalculatorPage.enterInstancesNumber(instancesNumber);
+        cloudCalculatorPage.enterInstancesNumber(formModelCreator.readInstancesNumberValue());
         cloudCalculatorPage.enterOSType(formModelCreator.readOperatingSystemValue());
         cloudCalculatorPage.enterMachineClass(formModelCreator.readMachineClassValue());
         cloudCalculatorPage.enterSeries(formModelCreator.readSeriesValue());

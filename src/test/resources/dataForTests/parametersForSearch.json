@@ -1,6 +1,7 @@
 [
   {
   "search" : {"searchValue" : "Google Cloud Platform Pricing Calculator"},
+  "instancesNumber" : {"instancesNumberValue" : 4},
   "operatingSystem" : {"operatingSystemValue" : 0},
   "machineClass" : {"machineClassValue" : 0},
   "series" : {"seriesValue" : 0},
@@ -13,6 +14,7 @@
   },
   {
   "search" : {"searchValue" : "Google Cloud Platform Pricing Calculator"},
+  "instancesNumber" : {"instancesNumberValue" : 7},
   "operatingSystem" : {"operatingSystemValue" : 8},
   "machineClass" : {"machineClassValue" : 0},
   "series" : {"seriesValue" : 0},
@@ -25,6 +27,7 @@
   },
   {
   "search" : {"searchValue" : "Google Cloud Platform Pricing Calculator"},
+  "instancesNumber" : {"instancesNumberValue" : 2},
   "operatingSystem" : {"operatingSystemValue" : 4},
   "machineClass" : {"machineClassValue" : 0},
   "series" : {"seriesValue" : 0},

@@ -1,27 +1,20 @@
 package model;
 
-import org.openqa.selenium.Keys;
-
 public class InstancesNumber {
 
-    private Keys keys;
+    private int instancesNumberValue;
 
-    public InstancesNumber(Keys keys) {
-        this.keys = keys;
+    public InstancesNumber() {
     }
 
-    public Keys getKeys() {
-        return keys;
-    }
-
-    public void setKeys(Keys keys) {
-        this.keys = keys;
+    public int getInstancesNumberValue() {
+        return instancesNumberValue;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("InstancesNumber{");
-        sb.append("keys=").append(keys);
+        sb.append("instancesNumberValue=").append(instancesNumberValue);
         sb.append('}');
         return sb.toString();
     }

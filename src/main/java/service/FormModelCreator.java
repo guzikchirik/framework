@@ -1,5 +1,6 @@
 package service;
 
+import org.openqa.selenium.Keys;
 import java.util.ResourceBundle;
 
 public class FormModelCreator {
@@ -19,6 +20,59 @@ public class FormModelCreator {
     public String readSearchValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
                 .get(Integer.parseInt(getDataFromProperties())).getSearch().getSearchValue();
+    }
+
+    public Keys readInstancesNumberValue() {
+        Keys keys;
+        switch (JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
+                .get(Integer.parseInt(getDataFromProperties())).getInstancesNumber().getInstancesNumberValue()) {
+            case 0 : {
+                keys = Keys.NUMPAD0;
+                break;
+            }
+            case 1 : {
+                keys = Keys.NUMPAD1;
+                break;
+            }
+            case 2 : {
+                keys = Keys.NUMPAD2;
+                break;
+            }
+            case 3 : {
+                keys = Keys.NUMPAD3;
+                break;
+            }
+            case 4 : {
+                keys = Keys.NUMPAD4;
+                break;
+            }
+            case 5 : {
+                keys = Keys.NUMPAD5;
+                break;
+            }
+            case 6 : {
+                keys = Keys.NUMPAD6;
+                break;
+            }
+            case 7 : {
+                keys = Keys.NUMPAD7;
+                break;
+            }
+            case 8 : {
+                keys = Keys.NUMPAD8;
+                break;
+            }
+            case 9 : {
+                keys = Keys.NUMPAD9;
+                break;
+            }
+            default:
+                throw new IllegalStateException("Unexpected value: " + JSON_READER
+                        .getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
+                        .get(Integer.parseInt(getDataFromProperties()))
+                        .getInstancesNumber().getInstancesNumberValue());
+        }
+        return keys;
     }
 
     public int readOperatingSystemValue() {

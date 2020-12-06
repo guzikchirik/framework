@@ -1,8 +1,8 @@
 package googleCloud.pages;
 
 import defaultPage.DefaultPage;
-import model.*;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -120,10 +120,10 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
         logger.info("Compute Engine activated");
     }
 
-    public void enterInstancesNumber(InstancesNumber instancesNumber) {
+    public void enterInstancesNumber(Keys keys) {
         waitForElementToBeClickable(numberOfInstancesLocator);
-        numberOfInstancesLocator.sendKeys(instancesNumber.getKeys());
-        logger.info("Instances number entered: " + instancesNumber.getKeys().name());
+        numberOfInstancesLocator.sendKeys(keys);
+        logger.info("Instances number entered: " + keys.name());
     }
 
     public void enterOSType(int value) {

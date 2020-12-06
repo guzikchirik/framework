@@ -3,6 +3,7 @@ package model;
 public class FormModel {
 
     private Search search;
+    private InstancesNumber instancesNumber;
     private OperatingSystem operatingSystem;
     private MachineClass machineClass;
     private Series series;
@@ -18,6 +19,10 @@ public class FormModel {
 
     public Search getSearch() {
         return search;
+    }
+
+    public InstancesNumber getInstancesNumber() {
+        return instancesNumber;
     }
 
     public OperatingSystem getOperatingSystem() {
@@ -60,6 +65,7 @@ public class FormModel {
     public String toString() {
         final StringBuilder sb = new StringBuilder("FormModel{");
         sb.append("search=").append(search);
+        sb.append(", instancesNumber=").append(instancesNumber);
         sb.append(", operatingSystem=").append(operatingSystem);
         sb.append(", machineClass=").append(machineClass);
         sb.append(", series=").append(series);
