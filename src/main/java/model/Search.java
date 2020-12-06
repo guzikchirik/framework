@@ -2,24 +2,19 @@ package model;
 
 public class Search {
 
-    private String search;
+    private String searchValue;
 
-    public Search(String search) {
-        this.search = search;
+    public Search() {
     }
 
-    public String getSearch() {
-        return search;
-    }
-
-    public void setSearch(String search) {
-        this.search = search;
+    public String getSearchValue() {
+        return searchValue;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Search{");
-        sb.append("search='").append(search).append('\'');
+        sb.append("searchValue='").append(searchValue).append('\'');
         sb.append('}');
         return sb.toString();
     }

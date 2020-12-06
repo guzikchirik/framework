@@ -2,24 +2,19 @@ package model;
 
 public class LocalSSD {
 
-    private String localSSD;
+    private String localSSDValue;
 
-    public LocalSSD(String localSSD) {
-        this.localSSD = localSSD;
+    public LocalSSD() {
     }
 
-    public String getLocalSSD() {
-        return localSSD;
-    }
-
-    public void setLocalSSD(String localSSD) {
-        this.localSSD = localSSD;
+    public String getLocalSSDValue() {
+        return localSSDValue;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("LocalSSD{");
-        sb.append("localSSD='").append(localSSD).append('\'');
+        sb.append("localSSDValue='").append(localSSDValue).append('\'');
         sb.append('}');
         return sb.toString();
     }

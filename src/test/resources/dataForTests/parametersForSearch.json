@@ -1,35 +1,38 @@
 [
   {
-  "operatingSystem" : {"operatingSystem" : "0"},
-  "machineClass" : {"machineClass" : "0"},
-  "series" : {"series" : "0"},
-  "machineType" : {"machineType" : "3"},
-  "numberOfGPUs" : {"numberOfGPUs" : "1"},
-  "gpuType" : {"gpuType" : "3"},
-  "localSSD" : {"localSSD" : "2"},
-  "location" : {"location" : "9"},
-  "committedUsage" : {"committedUsage" : "1"}
+  "search" : {"searchValue" : "Google Cloud Platform Pricing Calculator"},
+  "operatingSystem" : {"operatingSystemValue" : "0"},
+  "machineClass" : {"machineClassValue" : "0"},
+  "series" : {"seriesValue" : "0"},
+  "machineType" : {"machineTypeValue" : "3"},
+  "numberOfGPUs" : {"numberOfGPUsValue" : "1"},
+  "gpuType" : {"gpuTypeValue" : "3"},
+  "localSSD" : {"localSSDValue" : "2"},
+  "location" : {"locationValue" : "9"},
+  "committedUsage" : {"committedUsageValue" : "1"}
   },
   {
-  "operatingSystem" : {"operatingSystem" : "8"},
-  "machineClass" : {"machineClass" : "0"},
-  "series" : {"series" : "0"},
-  "machineType" : {"machineType" : "21"},
-  "numberOfGPUs" : {"numberOfGPUs" : "4"},
-  "gpuType" : {"gpuType" : "0"},
-  "localSSD" : {"localSSD" : "9"},
-  "location" : {"location" : "4"},
-  "committedUsage" : {"committedUsage" : "2"}
+  "search" : {"searchValue" : "Google Cloud Platform Pricing Calculator"},
+  "operatingSystem" : {"operatingSystemValue" : "8"},
+  "machineClass" : {"machineClassValue" : "0"},
+  "series" : {"seriesValue" : "0"},
+  "machineType" : {"machineTypeValue" : "21"},
+  "numberOfGPUs" : {"numberOfGPUsValue" : "4"},
+  "gpuType" : {"gpuTypeValue" : "0"},
+  "localSSD" : {"localSSDValue" : "9"},
+  "location" : {"locationValue" : "4"},
+  "committedUsage" : {"committedUsageValue" : "2"}
   },
   {
-  "operatingSystem" : {"operatingSystem" : "4"},
-  "machineClass" : {"machineClass" : "0"},
-  "series" : {"series" : "0"},
-  "machineType" : {"machineType" : "10"},
-  "numberOfGPUs" : {"numberOfGPUs" : "3"},
-  "gpuType" : {"gpuType" : "2"},
-  "localSSD" : {"localSSD" : "4"},
-  "location" : {"location" : "7"},
-  "committedUsage" : {"committedUsage" : "1"}
+  "search" : {"searchValue" : "Google Cloud Platform Pricing Calculator"},
+  "operatingSystem" : {"operatingSystemValue" : "4"},
+  "machineClass" : {"machineClassValue" : "0"},
+  "series" : {"seriesValue" : "0"},
+  "machineType" : {"machineTypeValue" : "10"},
+  "numberOfGPUs" : {"numberOfGPUsValue" : "3"},
+  "gpuType" : {"gpuTypeValue" : "2"},
+  "localSSD" : {"localSSDValue" : "4"},
+  "location" : {"locationValue" : "7"},
+  "committedUsage" : {"committedUsageValue" : "1"}
   }
 ]

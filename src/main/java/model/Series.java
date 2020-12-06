@@ -2,24 +2,19 @@ package model;
 
 public class Series {
 
-    private String series;
+    private String seriesValue;
 
-    public Series(String series) {
-        this.series = series;
+    public Series() {
     }
 
-    public String getSeries() {
-        return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
+    public String getSeriesValue() {
+        return seriesValue;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Series{");
-        sb.append("series='").append(series).append('\'');
+        sb.append("seriesValue='").append(seriesValue).append('\'');
         sb.append('}');
         return sb.toString();
     }

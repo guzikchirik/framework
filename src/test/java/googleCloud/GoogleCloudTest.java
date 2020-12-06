@@ -8,21 +8,13 @@ import model.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import service.*;
+import service.FormModelCreator;
 import tenMinuteMail.pages.TenMinuteMailHomePage;
 
 public class GoogleCloudTest extends BaseTest {
 
-    Search search = SearchCreator.withCredentialsFromProperty();
     InstancesNumber instancesNumber = InstancesNumberCreator.withCredentialsFromProperty();
-    OperatingSystem operatingSystem = OperatingSystemCreator.withCredentialsFromProperty();
-    MachineClass machineClass = MachineClassCreator.withCredentialsFromProperty();
-    Series series = SeriesCreator.withCredentialsFromProperty();
-    MachineType machineType = MachineTypeCreator.withCredentialsFromProperty();
-    NumberOfGPUs numberOfGPUs = NumberOfGPUsCreator.withCredentialsFromProperty();
-    GPUType gpuType = GPUTypeCreator.withCredentialsFromProperty();
-    LocalSSD localSSD = LocalSSDCreator.withCredentialsFromProperty();
-    Location location = LocationCreator.withCredentialsFromProperty();
-    CommittedUsage committedUsage = CommittedUsageCreator.withCredentialsFromProperty();
+    FormModelCreator formModelCreator = new FormModelCreator();
 
     @Test
     public void isTotalEstimatedMonthlyCostInEmailEqualsToRequiredTest() {
@@ -32,21 +24,21 @@ public class GoogleCloudTest extends BaseTest {
         GoogleCloudCalculatorPage cloudCalculatorPage = new GoogleCloudCalculatorPage(driver);
         TenMinuteMailHomePage tenMinuteMailHomePage = new TenMinuteMailHomePage(driver);
         cloudHomePage.openPage();
-        cloudHomePage.enterSearchTerm(search);
+        cloudHomePage.enterSearchTerm(formModelCreator.readSearchValue());
         cloudHomePage.runSearch();
         cloudSearchResultsPage.goToCalculatorPage();
         cloudCalculatorPage.activateComputeEngine();
         cloudCalculatorPage.enterInstancesNumber(instancesNumber);
-        cloudCalculatorPage.enterOSType(operatingSystem);
-        cloudCalculatorPage.enterMachineClass(machineClass);
-        cloudCalculatorPage.enterSeries(series);
-        cloudCalculatorPage.enterMachineType(machineType);
+        cloudCalculatorPage.enterOSType(formModelCreator.readOperatingSystemValue());
+        cloudCalculatorPage.enterMachineClass(formModelCreator.readMachineClassValue());
+        cloudCalculatorPage.enterSeries(formModelCreator.readSeriesValue());
+        cloudCalculatorPage.enterMachineType(formModelCreator.readMachineTypeValue());
         cloudCalculatorPage.markAddGPUCheckbox();
-        cloudCalculatorPage.enterNumberOfGPUs(numberOfGPUs);
-        cloudCalculatorPage.enterGPUType(gpuType);
-        cloudCalculatorPage.enterLocalSSD(localSSD);
-        cloudCalculatorPage.enterDatacenterLocation(location);
-        cloudCalculatorPage.enterCommittedUsage(committedUsage);
+        cloudCalculatorPage.enterNumberOfGPUs(formModelCreator.readNumberOfGPUsValue());
+        cloudCalculatorPage.enterGPUType(formModelCreator.readGPUTypeValue());
+        cloudCalculatorPage.enterLocalSSD(formModelCreator.readLocalSSDValue());
+        cloudCalculatorPage.enterDatacenterLocation(formModelCreator.readLocationValue());
+        cloudCalculatorPage.enterCommittedUsage(formModelCreator.readCommittedUsageValue());
         cloudCalculatorPage.addToEstimate();
         String resultFromCalculator = cloudCalculatorPage.getTotalEstimateCostAsString();
         cloudCalculatorPage.openLinkInNewTab();

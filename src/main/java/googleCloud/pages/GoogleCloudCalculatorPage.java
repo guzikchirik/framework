@@ -126,43 +126,43 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
         logger.info("Instances number entered: " + instancesNumber.getKeys().name());
     }
 
-    public void enterOSType(OperatingSystem operatingSystem) {
+    public void enterOSType(String value) {
         waitForElementToBeClickable(operatingSystemLocator).click();
         waitForVisibilityOfAllElements(requiredOSValueLocator);
         waitForElementSelectionStateToBe(requiredOSValueLocator
-                .get(Integer.parseInt(operatingSystem.getOperatingSystem())), false);
-        requiredOSValueLocator.get(Integer.parseInt(operatingSystem.getOperatingSystem())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredOSValueLocator.get(Integer.parseInt(value)).click();
         logger.info("OS type entered: " + requiredOSValueLocator
-                .get(Integer.parseInt(operatingSystem.getOperatingSystem())).getText());
+                .get(Integer.parseInt(value)).getText());
     }
 
-    public void enterMachineClass(MachineClass machineClass) {
+    public void enterMachineClass(String value) {
         waitForElementToBeClickable(machineClassLocator).click();
         waitForVisibilityOfAllElements(requiredMachineClassLocator);
         waitForElementSelectionStateToBe(requiredMachineClassLocator
-                .get(Integer.parseInt(machineClass.getMachineClass())), false);
-        requiredMachineClassLocator.get(Integer.parseInt(machineClass.getMachineClass())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredMachineClassLocator.get(Integer.parseInt(value)).click();
         logger.info("Machine class entered: " + requiredMachineClassLocator
-                .get(Integer.parseInt(machineClass.getMachineClass())).getText());
+                .get(Integer.parseInt(value)).getText());
     }
 
-    public void enterSeries(Series series) {
+    public void enterSeries(String value) {
         waitForElementToBeClickable(seriesLocator).click();
         waitForVisibilityOfAllElements(requiredSeriesLocator);
         waitForElementSelectionStateToBe(requiredSeriesLocator
-                .get(Integer.parseInt(series.getSeries())), false);
-        requiredSeriesLocator.get(Integer.parseInt(series.getSeries())).click();
-        logger.info("Series entered: " + requiredSeriesLocator.get(Integer.parseInt(series.getSeries())).getText());
+                .get(Integer.parseInt(value)), false);
+        requiredSeriesLocator.get(Integer.parseInt(value)).click();
+        logger.info("Series entered: " + requiredSeriesLocator.get(Integer.parseInt(value)).getText());
     }
 
-    public void enterMachineType(MachineType machineType) {
+    public void enterMachineType(String value) {
         waitForElementToBeClickable(machineTypeLocator).click();
         waitForVisibilityOfAllElements(requiredMachineTypeLocator);
         waitForElementSelectionStateToBe(requiredMachineTypeLocator
-                .get(Integer.parseInt(machineType.getMachineType())), false);
-        requiredMachineTypeLocator.get(Integer.parseInt(machineType.getMachineType())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredMachineTypeLocator.get(Integer.parseInt(value)).click();
         logger.info("Machine type entered: " + requiredMachineTypeLocator
-                .get(Integer.parseInt(machineType.getMachineType())).getText());
+                .get(Integer.parseInt(value)).getText());
     }
 
     public void markAddGPUCheckbox() {
@@ -170,52 +170,52 @@ public class GoogleCloudCalculatorPage extends DefaultPage {
         logger.info("GPU checkbox marked");
     }
 
-    public void enterNumberOfGPUs(NumberOfGPUs numberOfGPUs) {
+    public void enterNumberOfGPUs(String value) {
         waitForElementToBeClickable(gpuCountLocator).click();
         waitForVisibilityOfAllElements(requiredGPUCountLocator);
         waitForElementSelectionStateToBe(requiredGPUCountLocator
-                .get(Integer.parseInt(numberOfGPUs.getNumberOfGPUs())), false);
-        requiredGPUCountLocator.get(Integer.parseInt(numberOfGPUs.getNumberOfGPUs())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredGPUCountLocator.get(Integer.parseInt(value)).click();
         logger.info("GPUs number entered: " + requiredGPUCountLocator
-                .get(Integer.parseInt(numberOfGPUs.getNumberOfGPUs())).getText());
+                .get(Integer.parseInt(value)).getText());
     }
 
-    public void enterGPUType(GPUType gpuType) {
+    public void enterGPUType(String value) {
         waitForElementToBeClickable(gpuTypeLocator).click();
         waitForVisibilityOfAllElements(requiredGPUTypeLocator);
         waitForElementSelectionStateToBe(requiredGPUTypeLocator
-                .get(Integer.parseInt(gpuType.getGpuType())), false);
-        requiredGPUTypeLocator.get(Integer.parseInt(gpuType.getGpuType())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredGPUTypeLocator.get(Integer.parseInt(value)).click();
         logger.info("GPU type entered: " + requiredGPUTypeLocator
-                .get(Integer.parseInt(gpuType.getGpuType())).getText());
+                .get(Integer.parseInt(value)).getText());
     }
 
-    public void enterLocalSSD(LocalSSD localSSD) {
+    public void enterLocalSSD(String value) {
         waitForElementToBeClickable(localSSDLocator.get(0)).click();
         waitForVisibilityOfAllElements(requiredLocalSSDLocator);
         waitForElementSelectionStateToBe(requiredLocalSSDLocator
-                .get(Integer.parseInt(localSSD.getLocalSSD())), false);
-        requiredLocalSSDLocator.get(Integer.parseInt(localSSD.getLocalSSD())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredLocalSSDLocator.get(Integer.parseInt(value)).click();
         logger.info("Local SSD entered: " + requiredLocalSSDLocator
-                .get(Integer.parseInt(localSSD.getLocalSSD())).getText());
+                .get(Integer.parseInt(value)).getText());
     }
 
-    public void enterDatacenterLocation(Location location) {
+    public void enterDatacenterLocation(String value) {
         waitForElementToBeClickable(locationLocator.get(0)).click();
         waitForVisibilityOfAllElements(requiredLocationLocator);
         waitForElementSelectionStateToBe(requiredLocationLocator
-                .get(Integer.parseInt(location.getLocation())), false);
-        requiredLocationLocator.get(Integer.parseInt(location.getLocation())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredLocationLocator.get(Integer.parseInt(value)).click();
         logger.info("Datacenter location entered: " + requiredLocationLocator
-                .get(Integer.parseInt(location.getLocation())).getText());
+                .get(Integer.parseInt(value)).getText());
     }
 
-    public void enterCommittedUsage(CommittedUsage committedUsage) {
+    public void enterCommittedUsage(String value) {
         waitForElementToBeClickable(committedUsageLocator.get(0)).click();
         waitForVisibilityOfAllElements(requiredCommittedUsageLocator);
         waitForElementSelectionStateToBe(requiredCommittedUsageLocator
-                .get(Integer.parseInt(committedUsage.getCommittedUsage())), false);
-        requiredCommittedUsageLocator.get(Integer.parseInt(committedUsage.getCommittedUsage())).click();
+                .get(Integer.parseInt(value)), false);
+        requiredCommittedUsageLocator.get(Integer.parseInt(value)).click();
         logger.info("Committed usage entered");
     }
 

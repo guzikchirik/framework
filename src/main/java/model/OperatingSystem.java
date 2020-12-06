@@ -2,24 +2,19 @@ package model;
 
 public class OperatingSystem {
 
-    private String operatingSystem;
+    private String operatingSystemValue;
 
-    public OperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
+    public OperatingSystem() {
     }
 
-    public String getOperatingSystem() {
-        return operatingSystem;
-    }
-
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
+    public String getOperatingSystemValue() {
+        return operatingSystemValue;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("OperatingSystem{");
-        sb.append("operatingSystem='").append(operatingSystem).append('\'');
+        sb.append("operatingSystemValue='").append(operatingSystemValue).append('\'');
         sb.append('}');
         return sb.toString();
     }
