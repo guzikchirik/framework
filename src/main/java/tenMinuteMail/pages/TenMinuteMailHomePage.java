@@ -1,6 +1,7 @@
 package tenMinuteMail.pages;
 
 import defaultPage.DefaultPage;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class TenMinuteMailHomePage extends DefaultPage {
 
-    @FindBy(id = "copy_address")
+    @FindBy(id = "mail_address")
     private WebElement copyEmailLocator;
 
     @FindBy(className = "message_top")
@@ -27,11 +28,13 @@ public class TenMinuteMailHomePage extends DefaultPage {
     }
 
     public void copyEmail() {
-        waitForElementToBeClickable(copyEmailLocator).click();
-        waitForElementToBeClickable(copyEmailLocator).click();
-        waitForElementToBeClickable(copyEmailLocator).click();
-        waitForElementToBeClickable(copyEmailLocator).click();
-        waitForElementToBeClickable(copyEmailLocator).click();
+        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
         logger.info("Email address copied");
     }
 
