@@ -2,12 +2,12 @@ package model;
 
 public class GPUType {
 
-    private String gpuTypeValue;
+    private int gpuTypeValue;
 
     public GPUType() {
     }
 
-    public String getGpuTypeValue() {
+    public int getGpuTypeValue() {
         return gpuTypeValue;
     }
 

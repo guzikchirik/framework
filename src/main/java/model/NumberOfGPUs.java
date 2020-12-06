@@ -2,12 +2,12 @@ package model;
 
 public class NumberOfGPUs {
 
-    private String numberOfGPUsValue;
+    private int numberOfGPUsValue;
 
     public NumberOfGPUs() {
     }
 
-    public String getNumberOfGPUsValue() {
+    public int getNumberOfGPUsValue() {
         return numberOfGPUsValue;
     }
 

@@ -2,12 +2,12 @@ package model;
 
 public class MachineClass {
 
-    private String machineClassValue;
+    private int machineClassValue;
 
     public MachineClass() {
     }
 
-    public String getMachineClassValue() {
+    public int getMachineClassValue() {
         return machineClassValue;
     }
 

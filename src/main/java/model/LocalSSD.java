@@ -2,12 +2,12 @@ package model;
 
 public class LocalSSD {
 
-    private String localSSDValue;
+    private int localSSDValue;
 
     public LocalSSD() {
     }
 
-    public String getLocalSSDValue() {
+    public int getLocalSSDValue() {
         return localSSDValue;
     }
 

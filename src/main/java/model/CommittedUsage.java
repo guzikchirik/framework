@@ -2,12 +2,12 @@ package model;
 
 public class CommittedUsage {
 
-    private String committedUsageValue;
+    private int committedUsageValue;
 
     public CommittedUsage() {
     }
 
-    public String getCommittedUsageValue() {
+    public int getCommittedUsageValue() {
         return committedUsageValue;
     }
 

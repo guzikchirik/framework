@@ -2,12 +2,12 @@ package model;
 
 public class Location {
 
-    private String locationValue;
+    private int locationValue;
 
     public Location() {
     }
 
-    public String getLocationValue() {
+    public int getLocationValue() {
         return locationValue;
     }
 

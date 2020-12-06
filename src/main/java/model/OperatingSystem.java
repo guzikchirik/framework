@@ -2,12 +2,12 @@ package model;
 
 public class OperatingSystem {
 
-    private String operatingSystemValue;
+    private int operatingSystemValue;
 
     public OperatingSystem() {
     }
 
-    public String getOperatingSystemValue() {
+    public int getOperatingSystemValue() {
         return operatingSystemValue;
     }
 

@@ -12,57 +12,57 @@ public class FormModelCreator {
 
     private final JsonReader JSON_READER = new JsonReader();
 
-    public String getDataFromProps() {
+    public String getDataFromProperties() {
         return RES_BUNDLE.getString(FORM);
     }
 
     public String readSearchValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getSearch().getSearchValue();
+                .get(Integer.parseInt(getDataFromProperties())).getSearch().getSearchValue();
     }
 
-    public String readOperatingSystemValue() {
+    public int readOperatingSystemValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getOperatingSystem().getOperatingSystemValue();
+                .get(Integer.parseInt(getDataFromProperties())).getOperatingSystem().getOperatingSystemValue();
     }
 
-    public String readMachineClassValue() {
+    public int readMachineClassValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getMachineClass().getMachineClassValue();
+                .get(Integer.parseInt(getDataFromProperties())).getMachineClass().getMachineClassValue();
     }
 
-    public String readSeriesValue() {
+    public int readSeriesValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getSeries().getSeriesValue();
+                .get(Integer.parseInt(getDataFromProperties())).getSeries().getSeriesValue();
     }
 
-    public String readMachineTypeValue() {
+    public int readMachineTypeValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getMachineType().getMachineTypeValue();
+                .get(Integer.parseInt(getDataFromProperties())).getMachineType().getMachineTypeValue();
     }
 
-    public String readNumberOfGPUsValue() {
+    public int readNumberOfGPUsValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getNumberOfGPUs().getNumberOfGPUsValue();
+                .get(Integer.parseInt(getDataFromProperties())).getNumberOfGPUs().getNumberOfGPUsValue();
     }
 
-    public String readGPUTypeValue() {
+    public int readGPUTypeValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getGpuType().getGpuTypeValue();
+                .get(Integer.parseInt(getDataFromProperties())).getGpuType().getGpuTypeValue();
     }
 
-    public String readLocalSSDValue() {
+    public int readLocalSSDValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getLocalSSD().getLocalSSDValue();
+                .get(Integer.parseInt(getDataFromProperties())).getLocalSSD().getLocalSSDValue();
     }
 
-    public String readLocationValue() {
+    public int readLocationValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getLocation().getLocationValue();
+                .get(Integer.parseInt(getDataFromProperties())).getLocation().getLocationValue();
     }
 
-    public String readCommittedUsageValue() {
+    public int readCommittedUsageValue() {
         return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProps())).getCommittedUsage().getCommittedUsageValue();
+                .get(Integer.parseInt(getDataFromProperties())).getCommittedUsage().getCommittedUsageValue();
     }
 }

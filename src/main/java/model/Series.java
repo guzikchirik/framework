@@ -2,12 +2,12 @@ package model;
 
 public class Series {
 
-    private String seriesValue;
+    private int seriesValue;
 
     public Series() {
     }
 
-    public String getSeriesValue() {
+    public int getSeriesValue() {
         return seriesValue;
     }
 
