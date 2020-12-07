@@ -1,31 +1,25 @@
 package service;
 
+import model.FormModel;
 import org.openqa.selenium.Keys;
-import java.util.ResourceBundle;
+import java.util.List;
 
 public class FormModelCreator {
 
-    private final ResourceBundle RES_BUNDLE = ResourceBundle.getBundle(System.getProperty("environment"));
-
-    private final String FORM = "form";
-
-    private final String PATH_TO_JSON_FILE = "src/test/resources/dataForTests/parametersForSearch.json";
-
-    private final JsonReader JSON_READER = new JsonReader();
-
-    public String getDataFromProperties() {
-        return RES_BUNDLE.getString(FORM);
-    }
+    private final String form = "form";
+    private final ResBundle resBundle = new ResBundle();
+    private final int formNumber = Integer.parseInt(resBundle.getDataFromProperties(form));
+    private final String pathToJsonFile = "src/test/resources/dataForTests/parametersForSearch.json";
+    private final JsonReader jsonReader = new JsonReader();
+    private final List<FormModel> formsList = jsonReader.getFormModelsFromJsonFile(pathToJsonFile);
 
     public String readSearchValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getSearch().getSearchValue();
+        return formsList.get(formNumber).getSearch().getSearchValue();
     }
 
     public Keys readInstancesNumberValue() {
         Keys keys;
-        switch (JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getInstancesNumber().getInstancesNumberValue()) {
+        switch (formsList.get(formNumber).getInstancesNumber().getInstancesNumberValue()) {
             case 0 : {
                 keys = Keys.NUMPAD0;
                 break;
@@ -67,56 +61,45 @@ public class FormModelCreator {
                 break;
             }
             default:
-                throw new IllegalStateException("Unexpected value: " + JSON_READER
-                        .getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                        .get(Integer.parseInt(getDataFromProperties()))
-                        .getInstancesNumber().getInstancesNumberValue());
+                throw new IllegalStateException("Unexpected value: " + formsList
+                        .get(formNumber).getInstancesNumber().getInstancesNumberValue());
         }
         return keys;
     }
 
     public int readOperatingSystemValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getOperatingSystem().getOperatingSystemValue();
+        return formsList.get(formNumber).getOperatingSystem().getOperatingSystemValue();
     }
 
     public int readMachineClassValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getMachineClass().getMachineClassValue();
+        return formsList.get(formNumber).getMachineClass().getMachineClassValue();
     }
 
     public int readSeriesValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getSeries().getSeriesValue();
+        return formsList.get(formNumber).getSeries().getSeriesValue();
     }
 
     public int readMachineTypeValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getMachineType().getMachineTypeValue();
+        return formsList.get(formNumber).getMachineType().getMachineTypeValue();
     }
 
     public int readNumberOfGPUsValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getNumberOfGPUs().getNumberOfGPUsValue();
+        return formsList.get(formNumber).getNumberOfGPUs().getNumberOfGPUsValue();
     }
 
     public int readGPUTypeValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getGpuType().getGpuTypeValue();
+        return formsList.get(formNumber).getGpuType().getGpuTypeValue();
     }
 
     public int readLocalSSDValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getLocalSSD().getLocalSSDValue();
+        return formsList.get(formNumber).getLocalSSD().getLocalSSDValue();
     }
 
     public int readLocationValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getLocation().getLocationValue();
+        return formsList.get(formNumber).getLocation().getLocationValue();
     }
 
     public int readCommittedUsageValue() {
-        return JSON_READER.getFormModelsFromJsonFile(PATH_TO_JSON_FILE)
-                .get(Integer.parseInt(getDataFromProperties())).getCommittedUsage().getCommittedUsageValue();
+        return formsList.get(formNumber).getCommittedUsage().getCommittedUsageValue();
     }
 }
