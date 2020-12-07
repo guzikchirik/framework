@@ -28,13 +28,9 @@ public class TenMinuteMailHomePage extends DefaultPage {
     }
 
     public void copyEmail() {
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
-        waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        for (int i = 0; i < 10; i++) {
+            waitForElementToBeClickable(copyEmailLocator).sendKeys(Keys.CONTROL + "c");
+        }
         logger.info("Email address copied");
     }
 
