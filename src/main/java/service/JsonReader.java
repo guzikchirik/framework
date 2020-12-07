@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class JsonReader {
+public class JsonReader implements ReaderManager{
 
     public List<FormModel> getFormModelsFromJsonFile(String source) {
         ObjectMapper objectMapper = new ObjectMapper();

@@ -7,11 +7,12 @@ import java.util.List;
 public class FormModelCreator {
 
     private final String form = "form";
-    private final ResBundle resBundle = new ResBundle();
-    private final int formNumber = Integer.parseInt(resBundle.getDataFromProperties(form));
+    private final String readerType = "json.reader";
+    private final PropsReader propsReader = new PropsReader();
+    private final int formNumber = Integer.parseInt(propsReader.getDataFromProperties(form));
     private final String pathToJsonFile = "src/test/resources/dataForTests/parametersForSearch.json";
-    private final JsonReader jsonReader = new JsonReader();
-    private final List<FormModel> formsList = jsonReader.getFormModelsFromJsonFile(pathToJsonFile);
+    private final List<FormModel> formsList = ReaderManager.initReader(propsReader.getDataFromProperties(readerType))
+            .getFormModelsFromJsonFile(pathToJsonFile);
 
     public String readSearchValue() {
         return formsList.get(formNumber).getSearch().getSearchValue();

@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.util.Arrays;
 import java.util.List;
 
-public class GsonReader {
+public class GsonReader implements ReaderManager {
 
     public List<FormModel> getFormModelsFromJsonFile(String source) {
         Gson gson = new Gson();

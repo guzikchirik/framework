@@ -2,7 +2,7 @@ package service;
 
 import java.util.ResourceBundle;
 
-public class ResBundle {
+public class PropsReader {
 
     private final ResourceBundle resourceBundle = ResourceBundle.getBundle(System.getProperty("environment"));
 
