@@ -1,3 +1,3 @@
-mvn -Dbrowser=chrome -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test
-mvn -Dbrowser=opera -Denvironment=qa -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test
-mvn -Dbrowser=chrome -Denvironment=staging -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test
+mvn -Dbrowser=chrome -Denvironment=form -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test
+mvn -Dbrowser=opera -Denvironment=form -Dform=1 -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test
+mvn -Dbrowser=chrome -Denvironment=form -Dform=2 -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test
