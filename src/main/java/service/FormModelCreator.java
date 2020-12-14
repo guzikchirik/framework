@@ -11,7 +11,8 @@ public class FormModelCreator {
     private final PropsReader propsReader = new PropsReader();
     private final int formNumber = Integer.parseInt(propsReader.getDataFromProperties(form));
     private final String pathToJsonFile = "src/test/resources/dataForTests/parametersForSearch.json";
-    private final List<FormModel> formsList = ReaderManager.initReader(propsReader.getDataFromProperties(readerType))
+    private final ReaderCreator readerCreator = new ReaderCreator();
+    private final List<FormModel> formsList = readerCreator.initReader(propsReader.getDataFromProperties(readerType))
             .getFormModelsFromJsonFile(pathToJsonFile);
 
     public String readSearchValue() {

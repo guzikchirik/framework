@@ -7,8 +7,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class JsonReader implements ReaderManager{
+public class JsonReader implements ReaderManager {
 
+    @Override
     public List<FormModel> getFormModelsFromJsonFile(String source) {
         ObjectMapper objectMapper = new ObjectMapper();
         List<FormModel> formModelList = null;
@@ -18,5 +19,10 @@ public class JsonReader implements ReaderManager{
             e.printStackTrace();
         }
         return formModelList;
+    }
+
+    @Override
+    public ReaderManager initReader(String key) {
+        return null;
     }
 }

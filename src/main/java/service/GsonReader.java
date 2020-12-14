@@ -9,6 +9,7 @@ import java.util.List;
 
 public class GsonReader implements ReaderManager {
 
+    @Override
     public List<FormModel> getFormModelsFromJsonFile(String source) {
         Gson gson = new Gson();
         List<FormModel> formModelList = null;
@@ -18,5 +19,10 @@ public class GsonReader implements ReaderManager {
             e.printStackTrace();
         }
         return formModelList;
+    }
+
+    @Override
+    public ReaderManager initReader(String key) {
+        return null;
     }
 }
