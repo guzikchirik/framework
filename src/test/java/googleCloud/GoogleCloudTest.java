@@ -53,7 +53,13 @@ public class GoogleCloudTest extends BaseTest {
 
     @Test
     public void littleSmokeTest() {
-        logger.info("littleSmokeTest");
-        Assert.assertTrue(true);
+        logger.info("littleSmokeTest here!");
+        String form = System.getProperties().getProperty("form");
+        System.out.println("System.getProperties().getProperty(\"form\") = " + form);
+        if (form != null) {
+            Assert.assertEquals(Integer.parseInt(form), 1, "Wrong form value");
+        } else {
+            Assert.fail("System.getProperties().getProperty(\"form\") = null");
+        }
     }
 }
