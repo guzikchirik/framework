@@ -3,7 +3,11 @@
 <suite name="Smoke" verbose="1">
     <test name="isTotalEstimatedMonthlyCostInEmailEqualsToRequiredTest">
         <classes>
-            <class name="googleCloud.GoogleCloudTest"/>
+            <class name="googleCloud.GoogleCloudTest">
+                <methods>
+                    <include name="littleSmokeTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

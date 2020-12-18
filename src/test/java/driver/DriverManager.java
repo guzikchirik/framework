@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import service.PropsReader;
 
 public class DriverManager {
 
@@ -23,7 +24,7 @@ public class DriverManager {
 
     public WebDriver getDriver() {
         if (driver == null) {
-            switch (System.getProperty("browser")) {
+            switch (PropsReader.getProperty("browser")) {
                 case "firefox": {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();

@@ -11,7 +11,7 @@ import tenMinuteMail.pages.TenMinuteMailHomePage;
 
 public class GoogleCloudTest extends BaseTest {
 
-    FormModelCreator formModelCreator = new FormModelCreator();
+    private FormModelCreator formModelCreator = new FormModelCreator();
 
     @Test
     public void isTotalEstimatedMonthlyCostInEmailEqualsToRequiredTest() {
@@ -49,5 +49,11 @@ public class GoogleCloudTest extends BaseTest {
         Assert.assertTrue(resultFromCalculator
                 .contains(tenMinuteMailHomePage.getTotalEstimatedCostFromEmailAsString()));
         logger.info("isTotalEstimatedMonthlyCostInEmailEqualsToRequiredTest finished");
+    }
+
+    @Test
+    public void littleSmokeTest() {
+        logger.info("littleSmokeTest");
+        Assert.assertTrue(true);
     }
 }
